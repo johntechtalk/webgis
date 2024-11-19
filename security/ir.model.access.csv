@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_webgis_webgis,webgis.webgis,model_webgis_webgis,base.group_user,1,1,1,1
+access_webgis_mystyle,webgis.mystyle,model_webgis_mystyle,base.group_user,1,1,1,1

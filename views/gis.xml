@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record model="ir.actions.client" id="mapview">
+      <field name="name">地图</field>
+      <field name="tag">webgis.mapview</field>
+    </record>
+
+    <record model="ir.actions.client" id="gisdraw">
+      <field name="name">标注</field>
+      <field name="tag">webgis.draw</field>
+    </record>
+
+    <menuitem name="地理信息系统" id="webgis.menu_root" groups="base.group_user" web_icon="webgis,static/description/icon.png"/>
+    <menuitem name="地图" id="webgis.dashboard_menu" parent="webgis.menu_root" action="webgis.mapview" sequence="1"/>
+    <menuitem name="标注" id="webgis.draw_menu" parent="webgis.menu_root" action="webgis.gisdraw" sequence="1"/>
+  </data>
+</odoo>

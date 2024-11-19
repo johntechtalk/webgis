@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="webgis.draw">
+        <!-- <button class="btn btn-primary" t-on-click="increment">Increment</button> -->
+        <div>
+            <label><input type="radio" name="drawType" value="Point" t-on-change="onTypeChange" t-att-checked="state.drawType === 'Point'"/>点</label>
+            <label><input type="radio" name="drawType" value="LineString" t-on-change="onTypeChange" t-att-checked="state.drawType === 'LineString'"/>线</label>
+            <label><input type="radio" name="drawType" value="Polygon" t-on-change="onTypeChange" t-att-checked="state.drawType === 'Polygon'"/>面</label>
+        </div>
+
+        <div class="container-fluid">
+            <div id="map" tabindex="0"></div>
+        </div>
+    </t>
+</templates>
+
+
+
+

@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="webgis_style_list">
+            <field name="name">webgis style list</field>
+            <field name="model">webgis.mystyle</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name" />
+                    <field name="category" />
+                    <field name="opacity" />
+                    <field name="scale" />
+                    <field name="text_fill_color" widget="color"/>
+                    <field name="text_stroke_color" widget="color"/>
+                    <field name="line_color" widget="color"/>
+                    <field name="line_stroke_color" widget="color"/>
+                    <field name="line_width" />
+                    <field name="font" />
+                    <field name="text_align" />
+                    <field name="text_baseline" />
+                    <field name="offset_y" />
+                    <field name="icon_url" widget="image"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="webgis.mystyle_view_form" model="ir.ui.view">
+            <field name="name">webgis.mystyle.view.form</field>
+            <field name="model">webgis.mystyle</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <group >
+                                <field name="name" />
+                                <field name="category" />
+                                <field name="opacity" />
+                                <field name="scale" />
+                                <field name="line_width" />
+                                <field name="font" />
+                                <field name="text_align" />
+                                <field name="text_baseline" />
+                                <field name="offset_y" />
+                            </group>
+                            <group >
+                                <field name="icon_url" widget="image"/>
+                                <field name="text_fill_color" widget="color"/>
+                                <field name="text_stroke_color" widget="color"/>
+                                <field name="line_color" widget="color"/>
+                                <field name="line_stroke_color" widget="color"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="webgis.style_action" model="ir.actions.act_window">
+            <field name="name">样式</field>
+            <field name="res_model">webgis.mystyle</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="webgis.style_menu" name="样式" action='webgis.style_action' parent='webgis.menu_root' sequence="10"/>
+    </data>
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="webgis.AwesomeDashboard">
+        <!-- <p>Counter: <t t-esc="state.value"/>
+        </p> -->
+        <div class="nav">
+
+            <!-- <button class="btn btn-primary" t-on-click="fetchMapData">显示</button> -->
+            <t t-foreach="state.style" t-as="style" t-key="style.id">
+                    <CheckBox value="style.value" id="style.id" t-on-change="fetchMapData">
+                        <t t-esc="style.name"/>
+                    </CheckBox>
+            </t>
+        </div>
+
+
+        <!-- <Dropdown>
+            <button class="btn btn-primary">文件</button>
+            <t t-set-slot="content">
+                <DropdownItem onSelected="() => this.onItemSelected('file-save')">Save</DropdownItem>
+                <DropdownItem onSelected="() => this.onItemSelected('file-open')">Open</DropdownItem>
+
+                <Dropdown>
+                    <button>新</button>
+                    <t t-set-slot="content">
+                        <DropdownItem onSelected="() => this.onItemSelected('file-new-document')">Document</DropdownItem>
+                        <DropdownItem onSelected="() => this.onItemSelected('file-new-spreadsheet')">Spreadsheet</DropdownItem>
+                    </t>
+                </Dropdown>
+            </t>
+        </Dropdown> -->
+
+        <!-- <Notebook orientation="'vertical'">
+            <t t-set-slot="page_1" title="'Page 1'" isVisible="true">
+                <h1>My First Page</h1>
+                <p>It's time to build Owl components. Did you read the documentation?</p>
+            </t>
+            <t t-set-slot="page_2" title="'2nd page'" isVisible="true">
+                <p>Wise owl's silent flight. Through the moonlit forest deep, guides my path to code</p>
+            </t>
+        </Notebook> -->
+
+
+        <div class="container-fluid">
+            <div id="map" tabindex="0">
+            </div>
+        </div>
+
+        <div id="map" style="width: 100%; height: 400px;"></div>
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer">
+                <img style="width:20px;height:20px;" src="/webgis/static/src/img/close.png"/>
+            </a>
+            <div id="popup-content"></div>
+        </div>
+
+
+
+    </t>
+
+
+
+
+</templates>
+
+
+
+
