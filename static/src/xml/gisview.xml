@@ -1,44 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
     <t t-name="webgis.AwesomeDashboard">
-        <!-- <p>Counter: <t t-esc="state.value"/>
-        </p> -->
-        <div class="nav">
+        <div class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- <t t-foreach="state.style" t-as="style" t-key="style.id">
+                            <li class="nav-item" style="padding-left: 10px;">
+                                <CheckBox value="style.value" id="style.id" t-on-change="fetchMapData">
+                                    <t t-esc="style.name"/>
+                                </CheckBox>
+                            </li>
 
-            <!-- <button class="btn btn-primary" t-on-click="fetchMapData">显示</button> -->
-            <t t-foreach="state.style" t-as="style" t-key="style.id">
-                    <CheckBox value="style.value" id="style.id" t-on-change="fetchMapData">
-                        <t t-esc="style.name"/>
-                    </CheckBox>
-            </t>
+                        </t> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">显示</a>
+                            <ul class="dropdown-menu" style="opacity: 0.9;">
+                                <div class="row" style="width: 300px;height: 500px;padding-left: 10px;color:white;font-size: 20px;">
+                                    <t t-foreach="state.style" t-as="style" t-key="style.id">
+                                        <div class="col" style="background-color: #0e539a;">
+                                            <CheckBox value="style.value" id="style.id" t-on-change="fetchMapData" >
+                                                <t t-esc="style.name"/>
+                                            </CheckBox>
+                                        </div>
+                                    </t>
+                                    
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
-
-        <!-- <Dropdown>
-            <button class="btn btn-primary">文件</button>
-            <t t-set-slot="content">
-                <DropdownItem onSelected="() => this.onItemSelected('file-save')">Save</DropdownItem>
-                <DropdownItem onSelected="() => this.onItemSelected('file-open')">Open</DropdownItem>
-
-                <Dropdown>
-                    <button>新</button>
-                    <t t-set-slot="content">
-                        <DropdownItem onSelected="() => this.onItemSelected('file-new-document')">Document</DropdownItem>
-                        <DropdownItem onSelected="() => this.onItemSelected('file-new-spreadsheet')">Spreadsheet</DropdownItem>
-                    </t>
-                </Dropdown>
-            </t>
-        </Dropdown> -->
-
-        <!-- <Notebook orientation="'vertical'">
-            <t t-set-slot="page_1" title="'Page 1'" isVisible="true">
-                <h1>My First Page</h1>
-                <p>It's time to build Owl components. Did you read the documentation?</p>
-            </t>
-            <t t-set-slot="page_2" title="'2nd page'" isVisible="true">
-                <p>Wise owl's silent flight. Through the moonlit forest deep, guides my path to code</p>
-            </t>
-        </Notebook> -->
 
 
         <div class="container-fluid">
